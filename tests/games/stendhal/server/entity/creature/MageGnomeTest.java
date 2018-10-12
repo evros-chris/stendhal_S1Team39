@@ -43,7 +43,7 @@ public class MageGnomeTest {
 		// check drop item
 		for (DropItem item : testgnome.dropsItems)
 		{
-			// for each item the mage gnome drops, if one of it is potion, than check its prob, min, max
+			// for each item the mage gnome drops, if one of it is potion, then check its prob, min, max
 			if (item.name.equals("potion"))
 			{
 				flag = true;
