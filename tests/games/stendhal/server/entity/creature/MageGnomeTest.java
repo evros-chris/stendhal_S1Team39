@@ -53,6 +53,8 @@ public class MageGnomeTest {
 			{
 				flag = true;
 				assertTrue(item.probability == 40.0);
+				assertTrue(item.min == 2);
+				assertTrue(item.max == 4);
 			}// if
 			if (item.name.equals("minor potion"))
 			{
