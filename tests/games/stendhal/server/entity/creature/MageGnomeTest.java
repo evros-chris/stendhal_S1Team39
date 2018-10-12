@@ -50,9 +50,15 @@ public class MageGnomeTest {
 		for (DropItem item : gnome.dropsItems)
 		{
 			if (item.name.equals("potion"))
+			{
 				flag = true;
-			System.out.println(item.name);
-			System.out.println(flag);
+				assertTrue(item.probability == 40.0);
+			}// if
+			if (item.name.equals("minor potion"))
+			{
+				flag = false;
+				
+			}
 		}
 		assertTrue(flag == true);
 		
