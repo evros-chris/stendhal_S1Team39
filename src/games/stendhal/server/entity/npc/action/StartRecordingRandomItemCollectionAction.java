@@ -85,8 +85,18 @@ public class StartRecordingRandomItemCollectionAction implements ChatAction {
 
 	@Override
 	public void fire(final Player player, final Sentence sentence, final EventRaiser raiser) {
+		
 		final String itemname = Rand.rand(items.keySet());
 		final int quantity = items.get(itemname);
+		
+		// Fix for duplicate weekly item quest item
+		if (questname == "weekly_item") {
+			final String prevQuest = player.getQuest("weekly_item");
+			if (prevQuest != null && itemname == prevQuest.split("=")[0]) {
+				this.fire(player, sentence, raiser);
+				return;
+			}
+		}
 
 		Map<String, String> substitutes = new HashMap<String, String>();
 		substitutes.put("item", Grammar.quantityplnoun(quantity, itemname, "a"));
