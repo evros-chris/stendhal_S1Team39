@@ -113,7 +113,7 @@ public class SoupTest {
 		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
 		en.step(player, "onion");
 		// [16:52] madmetzger earns 20 experience points.
-		assertEquals("The soup's on the table for you. It will heal you. My magical method in making the soup has given you a little karma too.", getReply(npc));
+		assertEquals("The soup's on the table for you. It will heal you.", getReply(npc));
 		en.step(player, "bye");
 		assertEquals("Goodbye, all you customers do work me hard ...", getReply(npc));
 		assertEquals(player.getXP(), 120);
@@ -121,5 +121,101 @@ public class SoupTest {
 		assertEquals("I hope you don't want more soup, because I haven't finished washing the dishes. Please check back in 10 minutes.", getReply(npc));
 		en.step(player, "bye");
 		assertEquals("Goodbye, all you customers do work me hard ...", getReply(npc));
+	}	
+	
+	@Test
+	public void sayItemsTogether() {
+		
+		player = PlayerTestHelper.createPlayer("bob");
+        npc = SingletonRepository.getNPCList().get("Old Mother Helena");
+		en = npc.getEngine();
+		
+		// set player experience to 100
+		// equip the player with all the ingredients
+		player.setXP(100);
+		PlayerTestHelper.equipWithItem(player, "salad");
+		PlayerTestHelper.equipWithItem(player, "onion");
+		PlayerTestHelper.equipWithItem(player, "carrot");
+		PlayerTestHelper.equipWithItem(player, "spinach");
+		PlayerTestHelper.equipWithItem(player, "courgette");
+		PlayerTestHelper.equipWithItem(player, "collard");
+		PlayerTestHelper.equipWithItem(player, "cauliflower");
+		PlayerTestHelper.equipWithItem(player, "broccoli");
+		PlayerTestHelper.equipWithItem(player, "leek");
+		
+		en.step(player, "hi");
+		assertEquals("Hello, stranger. You look weary from your travels. I know what would #revive you.", getReply(npc));
+		en.step(player, "revive");
+		assertEquals("My special soup has a magic touch. I need you to bring me the #ingredients.", getReply(npc));
+		en.step(player, "ingredients");
+		assertEquals("I need 9 ingredients before I make the soup: #carrot, #spinach, #courgette, #collard, #salad, #onion, #cauliflower, #broccoli, and #leek. Will you collect them?", getReply(npc));
+		en.step(player, "yes");
+		assertEquals("You made a wise choice. Do you have anything I need already?", getReply(npc));
+		en.step(player, "yes");
+		assertEquals("What did you bring?", getReply(npc));
+		// provide all the ingredients together
+		en.step(player, "everything");
+		en.step(player, "bye");
+		
+		// check that the player receives 50 experience and 5 karma
+		assertEquals(player.getXP(), 150);
+		assertEquals(player.getKarma(),15.0,0.0);
 	}
+	
+	@Test
+	public void sayItemsOneByOne() {
+
+		player = PlayerTestHelper.createPlayer("bob");
+		npc = SingletonRepository.getNPCList().get("Old Mother Helena");
+		en = npc.getEngine();
+		
+		// set the player experience to 100
+		// equip the player with all the ingredients
+		player.setXP(100);
+		PlayerTestHelper.equipWithItem(player, "salad");
+		PlayerTestHelper.equipWithItem(player, "onion");
+		PlayerTestHelper.equipWithItem(player, "carrot");
+		PlayerTestHelper.equipWithItem(player, "spinach");
+		PlayerTestHelper.equipWithItem(player, "courgette");
+		PlayerTestHelper.equipWithItem(player, "collard");
+		PlayerTestHelper.equipWithItem(player, "cauliflower");
+		PlayerTestHelper.equipWithItem(player, "broccoli");
+		PlayerTestHelper.equipWithItem(player, "leek");
+	
+		en.step(player, "hi");
+		assertEquals("Hello, stranger. You look weary from your travels. I know what would #revive you.", getReply(npc));
+		en.step(player, "revive");
+		assertEquals("My special soup has a magic touch. I need you to bring me the #ingredients.", getReply(npc));
+		en.step(player, "ingredients");
+		assertEquals("I need 9 ingredients before I make the soup: #carrot, #spinach, #courgette, #collard, #salad, #onion, #cauliflower, #broccoli, and #leek. Will you collect them?", getReply(npc));
+		en.step(player, "yes");
+		assertEquals("You made a wise choice. Do you have anything I need already?", getReply(npc));
+		en.step(player, "yes");
+		assertEquals("What did you bring?", getReply(npc));
+		// provide the ingredients one by one
+		en.step(player, "salad");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "onion");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "carrot");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "spinach");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "courgette");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "collard");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "cauliflower");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "broccoli");
+		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
+		en.step(player, "leek");
+		assertEquals("The soup's on the table for you. It will heal you.", getReply(npc));
+		en.step(player, "bye");
+		assertEquals("Goodbye, all you customers do work me hard ...", getReply(npc));
+		
+		// check that the player receives 20 karma and no XP
+		assertEquals(player.getXP(), 120);
+		assertEquals(player.getKarma(),10,0.0);
+	}	
 }
