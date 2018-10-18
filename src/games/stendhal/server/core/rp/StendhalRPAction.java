@@ -43,6 +43,7 @@ import games.stendhal.server.entity.creature.Pet;
 import games.stendhal.server.entity.creature.Sheep;
 import games.stendhal.server.entity.item.Item;
 import games.stendhal.server.entity.item.StackableItem;
+import games.stendhal.server.entity.mapstuff.block.Block;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.events.AttackEvent;
@@ -555,8 +556,19 @@ public class StendhalRPAction {
 				return true;
 			}
 		}
-
-		if (zone.collides(entity, x, y)) {
+		//==================================================================================
+        //BLOCK PUSH FROM OUTSIDE OF ZONE BUG FIX
+		if (entity instanceof Player && zone.collides(entity, x, y))
+		{
+			List<Entity> entities = zone.getEntitiesAt(x, y);
+			for (Entity entit : entities)
+				if (entit instanceof Block)
+					((Block)entit).push((Player)entity, ((Player) entity).getDirection());
+		} // if
+		
+		else if (zone.collides(entity, x, y)) {
+	    //END OF BUG FIX
+	    //==================================================================================
 			boolean checkPath = true;
 			if (zone.collides(entity, x, y, false) && (entity instanceof Player)) {
 				// Trying to place a player on a spot with a real collision
