@@ -200,3 +200,13 @@ Notable contributors:
 - SnowFlake
   · Maps maker
   · NPCs
+- Petar Artinov
+  . Bug fixer
+- Matthew Walon
+  . Bug fixer
+- Evripidis Christodoulides
+  . Bug fixer
+- Cheuk Nam Rayan 
+  . Bug fixer
+- Stevin Sebastian
+  . Bug fixer

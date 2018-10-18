@@ -1,5 +1,19 @@
 Changelog
 ---------
+1.29
+*world*
+- Fixed straw cart position for the Help With The Harvest quest.
+- FIxed pushing the cart from outside the zone.
+- Mage gnome now drops potion instead of minor potion.
+- Probability and number of drop items is altered.
+- Changed the XP and Karma rewards for the soup quest.
+- Fixed weekly item quest bug where you get a wrong item.
+- Fixed telepotation hut bug which teleported the player to the wrong place.
+
+*code*
+- Added more test.
+- placeAt method for players now moves objects beneath them instead of the player.
+- Added code to filter the last item of a list of items.
 
 1.28
 *world*
