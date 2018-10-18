@@ -79,10 +79,13 @@ public class WeeklyItemQuest extends AbstractQuest {
 	private static final String QUEST_SLOT = "weekly_item";
 
 	/** How long until the player can give up and start another quest */
-	private static final int expireDelay = MathHelper.MINUTES_IN_ONE_WEEK * 6;
-
+	//static final int expireDelay = MathHelper.MINUTES_IN_ONE_WEEK * 6;
+	static final int expireDelay = 1;
 	/** How often the quest may be repeated */
 	private static final int delay = MathHelper.MINUTES_IN_ONE_WEEK;
+	
+	/** Added this so we can disable randomness for testing the repeat items bug */
+	private static boolean disableRandomness = true;
 
 	/**
 	 * All items which are hard enough to find but not tooo hard and not in Daily quest. If you want to do
@@ -198,8 +201,20 @@ public class WeeklyItemQuest extends AbstractQuest {
 		// common place to get the start quest actions as we can both starts it and abort and start again
 
 		final List<ChatAction> actions = new LinkedList<ChatAction>();
-		actions.add(new StartRecordingRandomItemCollectionAction(QUEST_SLOT,0,items,"I want Kirdneh's museum to be the greatest in the land! Please fetch [item]"
+		
+		if (disableRandomness) {
+			// If we are disabling the randomness, just create a map with 2 items in it 
+			Map<String, Integer> testingItems = new HashMap<String, Integer>();
+			testingItems.put("buster", 1);
+			testingItems.put("ice sword", 1);
+			
+			actions.add(new StartRecordingRandomItemCollectionAction(QUEST_SLOT,0,testingItems,"I want Kirdneh's museum to be the greatest in the land! Please fetch [item]"
+					+ " and say #complete, once you've brought it."));
+		} else {
+			actions.add(new StartRecordingRandomItemCollectionAction(QUEST_SLOT,0,items,"I want Kirdneh's museum to be the greatest in the land! Please fetch [item]"
 				+ " and say #complete, once you've brought it."));
+		}
+		
 		actions.add(new SetQuestToTimeStampAction(QUEST_SLOT, 1));
 
 		return new MultipleActions(actions);
@@ -321,6 +336,11 @@ public class WeeklyItemQuest extends AbstractQuest {
 				"I'm afraid I didn't send you on a #quest yet.",
 				null);
 
+	}
+	
+	// Our public method to disable the randomness
+	public void setRandomnessDisabled(boolean value) {
+		disableRandomness = value;
 	}
 
 	@Override

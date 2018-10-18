@@ -45,6 +45,7 @@ public class WeeklyItemQuestTest {
 	private Player player = null;
 	private SpeakerNPC npc = null;
 	private Engine en = null;
+	private static WeeklyItemQuest quest = null;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -56,7 +57,7 @@ public class WeeklyItemQuestTest {
 
 		new CuratorNPC().configureZone(zone, null);
 
-		final AbstractQuest quest = new WeeklyItemQuest();
+		quest = new WeeklyItemQuest();
 		quest.addToWorld();
 
 	}
@@ -64,6 +65,8 @@ public class WeeklyItemQuestTest {
 	public void setUp() {
 		player = PlayerTestHelper.createPlayer("player");
 	}
+	
+	
 
 	/**
 	 * Tests for quest.
@@ -129,5 +132,26 @@ public class WeeklyItemQuestTest {
 		en.step(player, "bye");
 		assertEquals("Good bye, it was pleasant talking with you.", getReply(npc));
 
+	}
+	
+	@Test
+	// Test for checking if the 'another' command behaves correctly
+	public void testAnotherRepeat() {
+		npc = SingletonRepository.getNPCList().get("Hazel");
+		en = npc.getEngine();
+		
+		quest.setRandomnessDisabled(true);
+		
+		// Run the test a few times to make sure we catch the issue
+		for (int i=0; i<4; i++) {
+			player.setQuest(questSlot, "buster=1;100");
+			en.step(player, "hi");
+			assertEquals("Welcome to Kirdneh Museum.", getReply(npc));
+			en.step(player, "another");
+			assertFalse(getReply(npc).startsWith("I want Kirdneh's museum to be the greatest in the land! Please fetch a buster"));
+			en.step(player, "bye");
+			assertEquals("Good bye, it was pleasant talking with you.", getReply(npc));
+		}
+		
 	}
 }
