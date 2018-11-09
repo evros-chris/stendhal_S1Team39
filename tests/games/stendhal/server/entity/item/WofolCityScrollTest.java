@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import games.stendhal.server.core.engine.SingletonRepository;
 import games.stendhal.server.core.engine.StendhalRPZone;
-import games.stendhal.server.entity.item.scroll.TeleportScroll;
+import games.stendhal.server.entity.item.scroll.*;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.Log4J;
@@ -24,7 +24,7 @@ public class WofolCityScrollTest {
 		MockStendlRPWorld.get();
 		ItemTestHelper.generateRPClasses();
 
-		MockStendlRPWorld.get().addRPZone(new StendhalRPZone("-1_semos_mine_nw", 100, 100));
+		MockStendlRPWorld.get().addRPZone(new StendhalRPZone("-1_semos_mine_nw"));
 	}
 
 	@AfterClass
@@ -37,7 +37,7 @@ public class WofolCityScrollTest {
 	 */
 	@Test
 	public void testDescribe() {
-		final TeleportScroll scroll = (TeleportScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
+		final MarkedScroll scroll = (MarkedScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
 		assertThat(scroll.describe(), is("You see a wofol city scroll, it will take you back to wofol city."));
 	} ///testDescribe
 
@@ -47,7 +47,7 @@ public class WofolCityScrollTest {
 	@Test
 	public void testOnUsed() {
 		final Player bob = PlayerTestHelper.createPlayer("bob");
-		final TeleportScroll scroll = (TeleportScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
+		final MarkedScroll scroll = (MarkedScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
         scroll.onUsed(bob);
 
 		assertEquals(52, bob.getX());
