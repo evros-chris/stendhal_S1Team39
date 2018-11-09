@@ -141,15 +141,15 @@ public class Block extends ActiveEntity implements ZoneEnterExitListener,
 	 * Resets the block position to its initial state
 	 */
 	public void reset() {
-//		wasMoved = false;
-//		List<BlockTarget> blockTargetsAt = this.getZone().getEntitiesAt(getX(), getY(), BlockTarget.class);
-//		for (BlockTarget blockTarget : blockTargetsAt) {
-//			blockTarget.untrigger();
-//		}
-//		this.setPosition(startX, startY);
-//		SingletonRepository.getTurnNotifier().dontNotify(this);
-//		this.notifyWorldAboutChanges();
-		return;
+		wasMoved = false;
+		List<BlockTarget> blockTargetsAt = this.getZone().getEntitiesAt(getX(), getY(), BlockTarget.class);
+		for (BlockTarget blockTarget : blockTargetsAt) {
+			blockTarget.untrigger();
+		}
+		this.setPosition(startX, startY);
+		SingletonRepository.getTurnNotifier().dontNotify(this);
+		this.notifyWorldAboutChanges();
+
 	}
 
 	/**
