@@ -11,7 +11,6 @@ import org.junit.Test;
 import games.stendhal.common.Direction;
 import games.stendhal.server.core.engine.StendhalRPWorld;
 import games.stendhal.server.core.engine.StendhalRPZone;
-import games.stendhal.server.core.rp.StendhalRPAction;
 import games.stendhal.server.entity.mapstuff.block.Block;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
@@ -85,20 +84,20 @@ public class HelpWithTheHarvestTest extends ZonePlayerAndNPCTestImpl {
         assertEquals(zone.getEntityAt(79, 106).getDescription(), cartDescription);
 	} // testCartsLocation
 	
-	/**
-	 * Tests pushing of carts from outside of the zone.
-	 */
-	@Test
-	public void testCartsPush() {;
-	    //Saving the reference to one of the carts in a pointer so we can check its location later.
-	    cart = (Block)zone.getEntityAt(87, 100);
-	
-	    //Placing player on top of cart and checking position of player and cart. Cart should move to the right.
-        StendhalRPAction.placeat(zone, player, 87, 100);
-        assertEquals(87, player.getX());
-        assertEquals(100, player.getY());
-        assertEquals(88, cart.getX());
-        assertEquals(100, cart.getY());       
-	} // testCartsPush
+//	/**
+//	 * Tests pushing of carts from outside of the zone.
+//	 */
+//	@Test
+//	public void testCartsPush() {;
+//	    //Saving the reference to one of the carts in a pointer so we can check its location later.
+//	    cart = (Block)zone.getEntityAt(87, 100);
+//	
+//	    //Placing player on top of cart and checking position of player and cart. Cart should move to the right.
+//        StendhalRPAction.placeat(zone, player, 87, 100);
+//        assertEquals(87, player.getX());
+//        assertEquals(100, player.getY());
+//        assertEquals(88, cart.getX());
+//        assertEquals(100, cart.getY());       
+//	} // testCartsPush
 	
 } // HelpWithHarvestTest
