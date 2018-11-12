@@ -22,7 +22,7 @@ import utilities.RPClass.ItemTestHelper;
 public class WofolCityScrollTest {
 	
 	private static StendhalRPZone zone;
-	private static final String ZONE_NAME = "0_ados_forest_w2"; 
+	private static final String ZONE_NAME = "-1_semos_mine_nw"; 
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -31,6 +31,9 @@ public class WofolCityScrollTest {
 		ItemTestHelper.generateRPClasses();
 		zone = new StendhalRPZone(ZONE_NAME);
 		world.addRPZone(zone);
+		
+		//Initializing collision map so carts know if they can mover.
+		zone.collisionMap.init(110, 110);
 	}
 
 	@AfterClass
@@ -43,7 +46,7 @@ public class WofolCityScrollTest {
 	 */
 	@Test
 	public void testDescribe() {
-		final MarkedScroll scroll = (MarkedScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
+		final WofolCityScroll scroll = (WofolCityScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
 		assertThat(scroll.describe(), is("You see a §'wofol city scroll', it will take you back to wofol city. Upon it is written: -1_semos_mine_nw"));
 	} ///testDescribe
 
@@ -55,9 +58,10 @@ public class WofolCityScrollTest {
 		final Player bob = PlayerTestHelper.createPlayer("bob");
 		PlayerTestHelper.registerPlayer(bob, zone);
 		
-		final TeleportScroll scroll = (TeleportScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
+		final WofolCityScroll scroll = (WofolCityScroll) SingletonRepository.getEntityManager().getItem("wofol city scroll");
 		scroll.setID(new ID(1, "wofol city scroll"));
 		zone.add(scroll);
+		zone.add(bob);
         scroll.onUsed(bob);
         
 
