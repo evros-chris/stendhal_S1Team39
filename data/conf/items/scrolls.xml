@@ -148,7 +148,8 @@
 
   <item name="kalavan city scroll">
     <type class="scroll" subclass="kalavan" tileid="-1"/>
-    <implementation class-name="games.stendhal.server.entity.item.scroll.MarkedScroll" /><description>You see a kalavan city scroll, it will take you back to kalavan city.</description>
+    <description>You see a kalavan city scroll, it will take you back to kalavan city.</description>
+    <implementation class-name="games.stendhal.server.entity.item.scroll.MarkedScroll" />
     <attributes>
       <infostring value="0_kalavan_city 64 17" />
       <quantity value="1" />
