@@ -5870,7 +5870,7 @@ It has been three days since I decided to explore the lower levels of the caves 
   <!--  Level 6 --><zone file="interiors/ados/library.tmx" name="int_uom_campus">
 	<portal x="8" y="30" ref="entrance_left">
 		<destination zone="0_ados_city" ref="uom_campus_entrance_left" /></portal>
-	<portal x="21" y="30" ref="entrance_right">
+	<portal x="21" y="31" ref="entrance_right">
 		<destination zone="0_ados_city" ref="uom_campus_entrance_right" /></portal>
 	<configurator class-name="games.stendhal.server.maps.ados.uomcampus.LonJathamNPC"></configurator></zone>
 
