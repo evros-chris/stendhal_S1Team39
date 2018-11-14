@@ -22,10 +22,12 @@ public class LonJathamNPC implements ZoneConfigurator {
 	@Override
 	public void configureZone(final StendhalRPZone zone, final Map<String, String> attributes) {
 		createLonJathamNPC(zone);
+
 	}
 
 	public void createLonJathamNPC(final StendhalRPZone zone) {
-
+	
+		// No Path No moving NPC
 		final SpeakerNPC npc = new SpeakerNPC("Lon Jatham") {
 			@Override
 			protected void createPath() {
@@ -33,20 +35,21 @@ public class LonJathamNPC implements ZoneConfigurator {
 
 			}
 
+			// Create Dialog
 			@Override
 			protected void createDialog() {
-				addGreeting("GOOOOOOOD MORRRRNINGG!");
-				addJob("I'm a lecturer in University of Manchester.");
-				addHelp("If you have question about studying Computer Science in Unversity of Manchester. Please ask ME!");
-                addReply("firstyearcourse",
+			
+					addGreeting("GOOOOOOOD MORRRRNINGG!");
+					addJob("I'm a lecturer in University of Manchester.");
+					addHelp("If you have question about studying Computer Science in Unversity of Manchester. Please ask ME!");
+					addReply("firstyearcourse",
                         "We offer Java, Comp Architecture, Comp Engineering, distributing system, Discrete Maths etc, for first year students");
-                addReply("secondyearcourse",
+					addReply("secondyearcourse",
                         "We offer Algorithms, Machine learning, Graphics, Distributed computing, mobile system, logic etc for second year students");
-                addReply("thirdyearcourse",
+					addReply("thirdyearcourse",
                 		"We offer a range of courses for you to choose, please visit our website for more details.");
-				addOffer("Sorry I do not have anything to offer you, but there are a place to eat in UoM - the Byte Cafe.");
-				addGoodbye("Bye, nice to meet you.");
-
+					addOffer("Sorry I do not have anything to offer you, but there are a place to eat in UoM - the Byte Cafe.");
+					addGoodbye("Bye, nice to meet you.");
 			}
 
 			/*
@@ -60,10 +63,12 @@ public class LonJathamNPC implements ZoneConfigurator {
 
 		};
 
+		// SET NPC outfit and direction
 		npc.setOutfit(new Outfit(0, 9, 7, 48, 1));
 		npc.setPosition(15, 26);
 		npc.setDirection(Direction.DOWN);
 		npc.initHP(100);
+		// Add Description
 		npc.setDescription("Lecturer teaching Java in University of Manchester School of Computer Science.");
 		zone.add(npc);
 	}

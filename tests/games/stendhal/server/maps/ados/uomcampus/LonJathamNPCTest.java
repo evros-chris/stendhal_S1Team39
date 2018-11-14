@@ -37,6 +37,7 @@ public class LonJathamNPCTest {
 	@Test
 	public void testConfigureZone() {
 
+		// Create Test Zone
 		SingletonRepository.getRPWorld();
 		final LonJathamNPC lonjathamConfigurator = new LonJathamNPC();
 
@@ -51,6 +52,7 @@ public class LonJathamNPCTest {
 	/**
 	 * Tests for hiandBye.
 	 */
+	// Test hi and bye conversation
 	@Test
 	public void testHiandBye() {
 		SingletonRepository.getRPWorld();
@@ -62,6 +64,7 @@ public class LonJathamNPCTest {
 		final Engine engine = LonJatham.getEngine();
 		engine.setCurrentState(ConversationStates.IDLE);
 
+		
 		Sentence sentence = new SentenceImplementation(new Expression("hi", ExpressionType.VERB));
 		engine.step(PlayerTestHelper.createPlayer("bob"), sentence);
 		assertThat(engine.getCurrentState(), is(ConversationStates.ATTENDING));
@@ -71,8 +74,11 @@ public class LonJathamNPCTest {
 		engine.step(PlayerTestHelper.createPlayer("bob"), sentence);
 		assertThat(engine.getCurrentState(), is(ConversationStates.IDLE));
 		assertThat(getReply(LonJatham), is("Bye, nice to meet you."));
+		
+		
 	}
 
+	// Test Reply function
 	@Test
 	public void testReply() {
 		SingletonRepository.getRPWorld();
@@ -106,6 +112,7 @@ public class LonJathamNPCTest {
 		
 	}
 	
+	// Test Job Help Offer function
 	@Test
 	public void testJobHelpOffer() {
 		SingletonRepository.getRPWorld();
