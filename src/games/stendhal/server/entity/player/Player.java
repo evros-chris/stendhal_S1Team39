@@ -324,6 +324,13 @@ public class Player extends RPEntity implements UseListener {
 		startMoveTurn = SingletonRepository.getRuleProcessor().getTurn();
 		directions.remove(direction);
 		directions.add(direction);
+		
+		// if the player is equipped with the invisibility ring then set his visibility to 20
+		if (isEquipped("invisibility ring"))
+			setVisibility(20);
+		// if the player is not equipped with the invisibility ring then set his visibility to 100
+		if (!isEquipped("invisibility ring"))
+			setVisibility(100);
 	}
 
 	/**
@@ -997,8 +1004,12 @@ public class Player extends RPEntity implements UseListener {
 	 * @return <code>true</code> if invisible.
 	 */
 	@Override
+	// if the played is equipped with the invisibility ring, then make him invisible to creatures
 	public boolean isInvisibleToCreatures() {
-		return has(INVISIBLE);
+		if (isEquipped("invisibility ring"))
+			return true;
+		else
+			return has(INVISIBLE);
 	}
 
 	/**
