@@ -101,6 +101,7 @@
     </equipable>
   </item>
 
+
   <item name="emerald ring">
     <type class="ring" subclass="emerald-ring" tileid="-1"/>
     <description>You see an emerald ring, known as ring of life. Wear it, and you risk less from death.</description>
