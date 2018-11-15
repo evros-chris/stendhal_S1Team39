@@ -4713,7 +4713,11 @@ Southeast: Docks
         <parameter name="rejected">Assassins have taken over the castle and blocked the door. You are too weak to force it open.</parameter>
       </implementation>
     </portal>
-    
+    <portal x="3" y="95" ref="uom_campus_entrance_left">
+    	<destination zone="int_uom_campus" ref="entrance_left" /></portal>
+    <portal x="10" y="95" ref="uom_campus_entrance_right">
+    	<destination zone="int_uom_campus" ref="entrance_right" /></portal>
+
   </zone>
   
   <zone name="0_ados_ocean_e" level="0" x="501024" y="500000" accessible="false" file="Level 0/ados/ocean_e.tmx">
@@ -5863,7 +5867,12 @@ It has been three days since I decided to explore the lower levels of the caves 
   <!--  Level 5 -->
   
   
-  <!--  Level 6 -->
-  
-  
+  <!--  Level 6 --><zone file="interiors/ados/library.tmx" name="int_uom_campus">
+	<portal x="8" y="30" ref="entrance_left">
+		<destination zone="0_ados_city" ref="uom_campus_entrance_left" /></portal>
+	<portal x="21" y="30" ref="entrance_right">
+		<destination zone="0_ados_city" ref="uom_campus_entrance_right" /></portal>
+	<configurator class-name="games.stendhal.server.maps.ados.uomcampus.LonJathamNPC"></configurator></zone>
+
+
 </zones>
