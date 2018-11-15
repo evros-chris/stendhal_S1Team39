@@ -101,10 +101,31 @@
     </equipable>
   </item>
 
+
   <item name="emerald ring">
     <type class="ring" subclass="emerald-ring" tileid="-1"/>
     <description>You see an emerald ring, known as ring of life. Wear it, and you risk less from death.</description>
     <implementation class-name="games.stendhal.server.entity.item.RingOfLife"/>
+    <attributes>
+      <amount value="1"/>
+      <persistent value="1"/>
+    </attributes>
+    <weight value="0.1"/>
+    <value value="100000"/>
+    <equipable>
+      <slot name="ground"/>
+      <slot name="content"/>
+      <slot name="bag"/>
+      <slot name="trade"/>
+      <slot name="finger"/>
+      <slot name="keyring"/>
+    </equipable>
+  </item>
+  
+  <item name="invisibility ring">
+    <type class="ring" subclass="invisibility-ring" tileid="-1"/>
+    <description>You see an invisibility ring. Wear it, and you will become invisible to creatures, NPCs and other players.</description>
+    <implementation class-name="games.stendhal.server.entity.item.InvisibilityRing"/>
     <attributes>
       <amount value="1"/>
       <persistent value="1"/>

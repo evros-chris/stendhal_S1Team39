@@ -252,13 +252,27 @@ public class SpeakerNPC extends NPC {
 			final int px = player.getX();
 			final int py = player.getY();
 
-			if (player.has("text")) {
+			// add the player to the list of players that are near the npc and have spoken only if the
+			// player is not equipped with the invisibility ring
+			if (player.has("text") && !player.isEquipped("invisibility ring")) {
 				int dx = px - x;
 				int dy = py - y;
 
 				if (Math.abs(dx)<range && Math.abs(dy)<range) { // check rectangular area
 //				if (dx*dx + dy*dy < range*range) { // optionally we could check a circular area
 					players.add(player);
+				}
+			}
+			// if the player has spoken and is equipped with the invisibility ring then make the npc
+			// act confused
+			else if (player.has("text"))
+			{
+				int dx = px - x;
+				int dy = py - y;
+
+				if (Math.abs(dx)<range && Math.abs(dy)<range) { // check rectangular area
+//				if (dx*dx + dy*dy < range*range) { // optionally we could check a circular area
+					npc.say("Oh, did you hear anything?");
 				}
 			}
 		}
