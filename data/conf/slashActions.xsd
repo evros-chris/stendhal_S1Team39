@@ -1,0 +1,48 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="stendhal" xmlns:tns="http://www.example.org"
+	elementFormDefault="qualified" xmlns:Q1="stendhal">
+
+	<xsd:element name="slashActions" type="Q1:SlashActions"></xsd:element>
+	
+	<complexType name="SlashActions" >
+		<sequence>
+			<element name="slashAction" type="Q1:SlashAction" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SlashAction">
+		<sequence>
+			<element name="implementation" type="Q1:Implementation" />
+			<element name="attributes" type="Q1:Attributes" />
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	
+	<complexType name="Implementation">
+    	<attribute name="class-name" type="string"></attribute>
+    </complexType>
+    
+    <complexType name="Attributes">
+    	<sequence>
+    		<element name="min" type="Q1:attribute-integer" />
+    		<element name="max" type="Q1:attribute-integer" />
+    		<element name="name" type="Q1:attribute-string" />
+    		<element name="type" type="Q1:attribute-string" />
+    		<element name="target" type="Q1:attribute-string" />
+    		<element name="stat" type="Q1:attribute-string" />
+    		<element name="mode" type="Q1:attribute-string" />
+    		<element name="value" type="Q1:attribute-string" />
+    		<element name="text" type="Q1:attribute-string" />
+    	</sequence>
+    </complexType>
+	
+    <complexType name="attribute-string">
+    	<attribute name="value" type="string" />
+    </complexType>
+	
+	<complexType name="attribute-integer">
+    	<attribute name="value" type="integer" />
+    </complexType>
+	
+	
+</schema>
