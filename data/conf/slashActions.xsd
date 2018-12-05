@@ -1,10 +1,10 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="stendhal" xmlns:tns="http://www.example.org"
 	elementFormDefault="qualified" xmlns:Q1="stendhal">
 
-	<xsd:element name="slashActions" type="Q1:SlashActions"></xsd:element>
+	<element name="slashActions" type="Q1:SlashActions"></element>
 	
-	<complexType name="SlashActions" >
+	<complexType name="SlashActions">
 		<sequence>
 			<element name="slashAction" type="Q1:SlashAction" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
@@ -29,7 +29,7 @@
     		<element name="name" type="Q1:attribute-string" />
     		<element name="type" type="Q1:attribute-string" />
     		<element name="target" type="Q1:attribute-string" />
-    		<element name="stat" type="Q1:attribute-string" />
+    		<element name="state" type="Q1:attribute-string" />
     		<element name="mode" type="Q1:attribute-string" />
     		<element name="value" type="Q1:attribute-string" />
     		<element name="text" type="Q1:attribute-string" />

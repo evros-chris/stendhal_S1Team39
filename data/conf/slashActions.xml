@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<groups xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="slashAction.xsd ">
-
+<slashActions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal slashActions.xsd ">
+	<slashAction name="AcceptChallengeAction">
+		<implementation class-name="games.stendhal.client.actions.AcceptChallengeAction"/>
+		<attributes>
+			<min value="1" />
+			<max value="1" />
+			<name value="" />
+			<type value="challenge" />
+			<target value= "params[0]" />
+			<state value = "" />
+			<mode value = "" />
+			<value value = "" />
+			<text value = "" />	
+		</attributes>
+	</slashAction>
 	
+		<slashAction name="AlterQuestAction">
+		<implementation class-name="games.stendhal.client.actions.AlterQuestAction"/>
+		<attributes>
+			<min value="2" />
+			<max value="3" />
+			<name value="params[1]" />
+			<type value="alterquest" />
+			<target value= "params[0]" />
+			<state value = "params[2]" />
+			<mode value = "" />
+			<value value = "" />
+			<text value = "" />	
+		</attributes>
+	</slashAction>
 
 
 
-
-</groups>
+</slashActions>
