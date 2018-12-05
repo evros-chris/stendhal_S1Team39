@@ -24,15 +24,19 @@
     
     <complexType name="Attributes">
     	<sequence>
+    		<element name="action" type="Q1:attribute-string"/>
     		<element name="min" type="Q1:attribute-integer" />
     		<element name="max" type="Q1:attribute-integer" />
     		<element name="name" type="Q1:attribute-string" />
     		<element name="type" type="Q1:attribute-string" />
     		<element name="target" type="Q1:attribute-string" />
+    		<element name="stat" type= Q1:attribute-string />
     		<element name="state" type="Q1:attribute-string" />
     		<element name="mode" type="Q1:attribute-string" />
     		<element name="value" type="Q1:attribute-string" />
     		<element name="text" type="Q1:attribute-string" />
+    		<element name="hours" type="Q1:attribute-string" />
+    		<element name="reason" type="Q1:attribute-string" />
     	</sequence>
     </complexType>
 	
