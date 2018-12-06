@@ -14,7 +14,10 @@
 		<sequence>
 			<element name="attributes" type="Q1:Attributes" />
 		</sequence>
-		<attribute name="name" type="string" use="required"/>
+		<attribute name = "name" type="string" use="required"/>
+		<attribute name = "min" type="integer" use="required"/>
+		<attribute name = "max" type="integer" use="required"/>
+		
 	</complexType>
 	
     

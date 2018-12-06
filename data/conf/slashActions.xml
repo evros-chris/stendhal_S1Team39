@@ -2,17 +2,17 @@
 <slashActions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="stendhal slashActions.xsd ">
 	
-	<slashAction name="AddBuddyAction">
+	<slashAction name="AddBuddyAction" min="1" max="1">
 		<attributes>
 			<min value="1" />
 			<max value="1" />
 			<type value="addbuddy" />
-			<target value= "params[0]" />
+			<target value= "params0" />
 			<text value = "" />
 		</attributes>
 	</slashAction>
 	
-	<slashAction name="AnswerAction">
+	<slashAction name="AnswerAction" min="1" max="0">
 		<attributes>
 			<min value="1" />
 			<max value="0" />
@@ -26,27 +26,27 @@
 	<!--  remainder / target need to be modify -->
 	
 	<!--  Core SlashAction is down there -->
-	<slashAction name="MessageAction">
+	<slashAction name="MessageAction" min="1" max="1">
 		<attributes>
 			<min value="1" />
 			<max value="1" />
 			<type value="tell" />
-			<target value= "params[0]" />
+			<target value= "params0" />
 			<text value = "remainder" />
 		</attributes>
 	</slashAction>
 	
-	<slashAction name="SupportAnswerAction">
+	<slashAction name="SupportAnswerAction" min="1" max="1">
 		<attributes>
 			<min value="1" />
 			<max value="1" />
 			<type value="supportanswer" />
-			<target value= "params[0]" />
+			<target value= "params0" />
 			<text value = "remainder" />
 		</attributes>
 	</slashAction>
 	
-	<slashAction name="WhoAction">
+	<slashAction name="WhoAction" min = "0" max="0">
 		<attributes>
 			<min value="0" />
 			<max value="0" />
@@ -56,7 +56,7 @@
 		</attributes>
 	</slashAction>
 	
-	<slashAction name="HelpAction">
+	<slashAction name="HelpAction" min="0" max="0">
 		<attributes>
 			<min value="0" />
 			<max value="0" />
@@ -66,7 +66,7 @@
 		</attributes>
 	</slashAction>
 
-	<slashAction name="GroupMessageAction">
+	<slashAction name="GroupMessageAction" min="0" max="0">
 		<attributes>
 			<min value="0" />
 			<max value="0" />
