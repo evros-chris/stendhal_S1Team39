@@ -20,7 +20,7 @@ public class XMLAction implements SlashAction
 	private int min = 0;
 	private int max = 0;
 	private boolean actionImplemented = false;
-	private Map<String, String> actionMap = null;
+	private Map<String, String> actionMap;
 	
 	
 	public void loadRPAction(Map<String, String> actionData, int minParams, int maxParams)
