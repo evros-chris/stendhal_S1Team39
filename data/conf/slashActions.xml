@@ -1,96 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <slashActions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="stendhal slashActions.xsd ">
-	<slashAction name="AcceptChallengeAction">
-		<implementation class-name="games.stendhal.client.actions.AcceptChallengeAction"/>
-		<attributes>
-			<min value="1" />
-			<max value="1" />
-			<type value="challenge" />
-			<target value= "params[0]" />
-			<action value = "accept" />
-
-		</attributes>
-	</slashAction>
 	
 	<slashAction name="AddBuddyAction">
-		<implementation class-name="games.stendhal.client.actions.AddBuddyAction"/>
 		<attributes>
 			<min value="1" />
 			<max value="1" />
 			<type value="addbuddy" />
 			<target value= "params[0]" />
+			<text value = "" />
 		</attributes>
 	</slashAction>
 	
 	<slashAction name="AnswerAction">
-		<implementation class-name="games.stendhal.client.actions.AnswerAction"/>
 		<attributes>
 			<min value="1" />
 			<max value="0" />
 			<type value="answer" />
+			<target value = "" />
 			<text value="remainder" />
 		</attributes>
 	</slashAction>
 	
-	<!--  remainder, params need modify -->
-	<slashAction name="AlterAction">
-		<implementation class-name="games.stendhal.client.actions.AlterAction"/>
-		<attributes>
-			<min value="3" />
-			<max value="3" />
-			<type value="alter" />
-			<target value= "params[0]" />
-			<stat value = "params[1]" />
-			<mode value = "params[2]" />
-			<value value = "remainder">
-		</attributes>
-	</slashAction>
-	
-	
-	<slashAction name="AlterQuestAction">
-		<implementation class-name="games.stendhal.client.actions.AlterQuestAction"/>
-		<attributes>
-			<min value="2" />
-			<max value="3" />
-			<name value="params[1]" />
-			<type value="alterquest" />
-			<target value= "params[0]" />
-			<state value = "params[2]" />
-		</attributes>
-	</slashAction>
-	
-	<!--  params and remainder need modify -->>
-	<slashAction name="BanAction">
-		<implementation class-name="games.stendhal.client.actions.BanAction"/>
-		<attributes>
-			<min value="2" />
-			<max value="2" />
-			<type value="ban" />
-			<target value="params[0]">
-			<hours value= "params[1]" />
-			<reason value = "remainder" />
-		</attributes>
-	</slashAction>
-	
-	
 
 	<!--  remainder / target need to be modify -->
-	<slashAction name="RemessageAction">
-		<implementation class-name="games.stendhal.client.actions.RemessageAction"/>
-		<attributes>
-			<min value="0" />
-			<max value="0" />
-			<name value="params[1]" />
-			<type value="tell" />
-			<target value= "params[0]" />
-			<state value = "params[2]" />
-		</attributes>
-	</slashAction>
 	
 	<!--  Core SlashAction is down there -->
 	<slashAction name="MessageAction">
-		<implementation class-name="games.stendhal.client.actions.MessageAction"/>
 		<attributes>
 			<min value="1" />
 			<max value="1" />
@@ -101,7 +37,6 @@
 	</slashAction>
 	
 	<slashAction name="SupportAnswerAction">
-		<implementation class-name="games.stendhal.client.actions.SupportAnswerAction"/>
 		<attributes>
 			<min value="1" />
 			<max value="1" />
@@ -112,28 +47,31 @@
 	</slashAction>
 	
 	<slashAction name="WhoAction">
-		<implementation class-name="games.stendhal.client.actions.WhoAction"/>
 		<attributes>
 			<min value="0" />
 			<max value="0" />
 			<type value="who" />
+			<target value="" />
+			<text value = ""/>
 		</attributes>
 	</slashAction>
 	
 	<slashAction name="HelpAction">
-		<implementation class-name="games.stendhal.client.actions.HelpAction"/>
 		<attributes>
 			<min value="0" />
 			<max value="0" />
+			<type value = "vho" />
+			<target value = "" />
+			<text value = "" />
 		</attributes>
 	</slashAction>
 
 	<slashAction name="GroupMessageAction">
-		<implementation class-name="games.stendhal.client.actions.GroupMessageAction"/>
 		<attributes>
 			<min value="0" />
 			<max value="0" />
 			<type value="who" />
+			<target value = "" />
 			<text value= "remainder" />
 		</attributes>
 	</slashAction>	
