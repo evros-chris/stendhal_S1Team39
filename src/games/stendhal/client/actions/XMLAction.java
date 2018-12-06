@@ -13,6 +13,8 @@
 package games.stendhal.client.actions;
 
 import java.util.Map;
+import games.stendhal.client.ClientSingletonRepository;
+import marauroa.common.game.RPAction;
 
 
 public class XMLAction implements SlashAction
@@ -27,6 +29,8 @@ public class XMLAction implements SlashAction
 	{
 		actionImplemented = true;
 		actionMap = actionData;
+		min = minParams;
+		max = maxParams;
 	}
 	
 	@Override
@@ -34,8 +38,27 @@ public class XMLAction implements SlashAction
 	{
 		if (actionImplemented == true)
 		{
-			//RPAction newXMLAction = new RPAction();
-			
+		  RPAction serverAction = new RPAction();
+		  for (String datakey : actionMap.keySet())
+		  {
+			  String dataValue = actionMap.get(datakey);
+			  
+			  if(dataValue.length() > 6 && dataValue.substring(0,6).equals("params"))
+			  {
+				  int p_num = Integer.parseInt(dataValue.substring(7));
+				  dataValue = params[p_num];
+			  }
+			  else if (dataValue.equals("remainder"))
+			  {
+				  dataValue = remainder;
+			  }
+			  
+			  serverAction.put(datakey, dataValue);
+		  }
+
+		  // Execute
+	      ClientSingletonRepository.getClientFramework().send(serverAction);
+
 		}
 		return true;
 	}

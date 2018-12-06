@@ -14,13 +14,6 @@ package games.stendhal.client.actions;
 
 import java.util.HashMap;
 
-//
-//
-
-/*
- * Eventually move these out from inner classes, then make them
- * dynamically configurable/loadable.
- */
 
 /**
  * A chat command.
