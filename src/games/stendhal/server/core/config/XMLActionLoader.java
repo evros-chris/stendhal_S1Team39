@@ -31,23 +31,23 @@ public final class XMLActionLoader {
 	{
 		final Document doc = XMLUtil.parse(in);
 		
-		Element actionRepo = (Element) doc.getFirstChild();
+		Element actionRepository = (Element) doc.getFirstChild();
 		
 		HashMap<String,SlashAction> actions = new HashMap<String,SlashAction>();
 		
-		NodeList allactions = actionRepo.getChildNodes();
+		NodeList allactions = actionRepository.getChildNodes();
 		for (int i = 0; i < allactions.getLength(); i++)
 		{
 			Node node = allactions.item(i);
 			if (node.getNodeType() == Node.ELEMENT_NODE)
 			{
-				//Element element = (Element)allactions.item(i);
-				//final String value = element.getAttribute("name");
-				
+				Element element = (Element)allactions.item(i);
+				final String actionName = element.getAttribute("name");
+				XMLAction testAction = readActionData(null);
+				actions.put(actionName,testAction);
+
 			}
 		}
-		XMLAction testAction = readActionData(null);
-		actions.put("MessageAction",testAction);
 		return actions;
 	}
 	
