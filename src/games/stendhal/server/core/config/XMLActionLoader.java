@@ -27,7 +27,7 @@ import games.stendhal.client.actions.SlashAction;
 import games.stendhal.client.actions.XMLAction;
 
 public final class XMLActionLoader {
-	protected static HashMap<String,SlashAction> load(InputStream in) throws SAXException, IOException
+	public static HashMap<String,SlashAction> load(InputStream in) throws SAXException, IOException
 	{
 		final Document doc = XMLUtil.parse(in);
 		
@@ -41,8 +41,8 @@ public final class XMLActionLoader {
 			Node node = allactions.item(i);
 			if (node.getNodeType() == Node.ELEMENT_NODE)
 			{
-				Element element = (Element)allactions.item(i);
-				final String value = element.getAttribute("name");
+				//Element element = (Element)allactions.item(i);
+				//final String value = element.getAttribute("name");
 				
 			}
 		}

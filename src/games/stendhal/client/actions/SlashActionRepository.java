@@ -12,9 +12,15 @@
  ***************************************************************************/
 package games.stendhal.client.actions;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Set;
+
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.XMLActionLoader;
 
 /**
  * Manages Slash Action Objects.
@@ -26,13 +32,22 @@ public class SlashActionRepository {
 
 	/**
 	 * Registers the available Action.
+	 * @throws IOException 
+	 * @throws SAXException 
 	 */
-	public static void register() {
+	public static void register() throws SAXException, IOException {
 		final SlashAction msg = new MessageAction();
 		final SlashAction supporta = new SupportAnswerAction();
 		final SlashAction who = new WhoAction();
 		final SlashAction help = new HelpAction();
 		final GroupMessageAction groupMessage = new GroupMessageAction();
+		
+		// Try to import the XML file
+		HashMap<String,SlashAction> xml_actions = new HashMap<String,SlashAction>();
+		FileInputStream input_xml;
+		input_xml = new FileInputStream("data/conf/slashActions.xml");
+		xml_actions = XMLActionLoader.load(input_xml);
+		actions.putAll(xml_actions);
 
 		actions.put("/", new RemessageAction());
 		actions.put("add", new AddBuddyAction());
