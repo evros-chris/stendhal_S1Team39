@@ -53,14 +53,25 @@ public final class XMLActionLoader {
 	
 	private static XMLAction readActionData(final Element element)
 	{
-		// Test for adding a new XMLaction
-		// Message Action
-		XMLAction xml_action = new XMLAction();
-		Map<String, String>test_action_data = new HashMap<String, String>();
-		test_action_data.put("type","tell");
-		test_action_data.put("target","params0");
-		test_action_data.put("text","remainder");
-	    xml_action.loadRPAction(test_action_data, 1, 1);
+		// Read the data of the action into the action map
+	    XMLAction xml_action = new XMLAction();
+	    Map<String, String> actionData = new HashMap<>();
+	    NodeList allactions = element.getChildNodes();
+		for (int i = 0; i < allactions.getLength(); i++)
+		{
+		    Node node = allactions.item(i);
+		    if(node.getNodeType() == Node.ELEMENT_NODE)
+		    {
+	            	Element actionElement = (Element)node;
+	            	final String name = actionElement.getAttribute("name");
+	            	final String value = actionElement.getAttribute("value");
+	            	actionData.put(name, value);
+		    }// if		
+	    }// for
+	        final String min = element.getAttribute("min");
+	        final String max = element.getAttribute("max");
+	        xml_action.loadRPAction(actionData, Integer.parseInt(min), Integer.parseInt(max));
+
 	    return xml_action;
 	}
 
