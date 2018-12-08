@@ -23,8 +23,6 @@
     
     <complexType name="Attributes">
     	<sequence>
-    		<element name="min" type="Q1:attribute-integer" />
-    		<element name="max" type="Q1:attribute-integer" />
     		<element name="type" type="Q1:attribute-string" />
     		<element name="target" type="Q1:attribute-string" />
     		<element name="text" type="Q1:attribute-string" />

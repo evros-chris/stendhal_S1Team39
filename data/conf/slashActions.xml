@@ -4,8 +4,6 @@
 	
 	<slashAction name="AddBuddyAction" min="1" max="1">
 		<attributes>
-			<min value="1" />
-			<max value="1" />
 			<type value="addbuddy" />
 			<target value= "params0" />
 			<text value = "" />
@@ -14,8 +12,6 @@
 	
 	<slashAction name="AnswerAction" min="1" max="0">
 		<attributes>
-			<min value="1" />
-			<max value="0" />
 			<type value="answer" />
 			<target value = "" />
 			<text value="remainder" />
@@ -28,8 +24,6 @@
 	<!--  Core SlashAction is down there -->
 	<slashAction name="MessageAction" min="1" max="1">
 		<attributes>
-			<min value="1" />
-			<max value="1" />
 			<type value="tell" />
 			<target value= "params0" />
 			<text value = "remainder" />
@@ -38,8 +32,6 @@
 	
 	<slashAction name="SupportAnswerAction" min="1" max="1">
 		<attributes>
-			<min value="1" />
-			<max value="1" />
 			<type value="supportanswer" />
 			<target value= "params0" />
 			<text value = "remainder" />
@@ -48,8 +40,6 @@
 	
 	<slashAction name="WhoAction" min = "0" max="0">
 		<attributes>
-			<min value="0" />
-			<max value="0" />
 			<type value="who" />
 			<target value="" />
 			<text value = ""/>
@@ -58,8 +48,6 @@
 	
 	<slashAction name="HelpAction" min="0" max="0">
 		<attributes>
-			<min value="0" />
-			<max value="0" />
 			<type value = "vho" />
 			<target value = "" />
 			<text value = "" />
@@ -68,8 +56,6 @@
 
 	<slashAction name="GroupMessageAction" min="0" max="0">
 		<attributes>
-			<min value="0" />
-			<max value="0" />
 			<type value="who" />
 			<target value = "" />
 			<text value= "remainder" />

@@ -43,8 +43,8 @@ public final class XMLActionLoader {
 			{
 				Element element = (Element)allactions.item(i);
 				final String actionName = element.getAttribute("name");
-				XMLAction testAction = readActionData(null);
-				actions.put(actionName,testAction);
+				XMLAction Action = readActionData(element);
+				actions.put(actionName,Action);
 
 			}
 		}
