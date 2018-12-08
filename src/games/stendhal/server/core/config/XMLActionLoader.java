@@ -41,9 +41,9 @@ public final class XMLActionLoader {
 			Node node = allactions.item(i);
 			if (node.getNodeType() == Node.ELEMENT_NODE)
 			{
-				Element element = (Element)allactions.item(i);
+				Element element = (Element)node;
 				final String actionName = element.getAttribute("name");
-				XMLAction Action = readActionData(element);
+				SlashAction Action = readActionData(element);
 				actions.put(actionName,Action);
 
 			}
