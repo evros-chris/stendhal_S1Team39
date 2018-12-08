@@ -17,9 +17,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.io.IOException;
+
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import games.stendhal.client.ClientSingletonRepository;
 import games.stendhal.client.MockStendhalClient;
@@ -146,9 +149,11 @@ public class SummonAtActionTest {
 
 	/**
 	 * Tests for fromChatline.
+	 * @throws IOException 
+	 * @throws SAXException 
 	 */
 	@Test
-	public void testFromChatline() {
+	public void testFromChatline() throws SAXException, IOException {
 		// create client
 		new MockStendhalClient() {
 			@Override

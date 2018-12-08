@@ -17,6 +17,7 @@ import static java.io.File.separator;
 
 import java.awt.Dimension;
 import java.io.File;
+import java.io.IOException;
 import java.security.AccessControlException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import org.apache.log4j.Logger;
+import org.xml.sax.SAXException;
 
 import games.stendhal.client.actions.MoveContinuousAction;
 import games.stendhal.client.gui.StendhalFirstScreen;
@@ -324,9 +326,15 @@ public final class stendhal {
 			SwingUtilities.invokeLater(new Runnable() {
 				@Override
 				public void run() {
-					j2DClient locclient = new j2DClient(client, userContext, splash);
-					perceptionDispatch.register(locclient.getPerceptionListener());
-					locclient.startGameLoop();
+					j2DClient locclient;
+					try {
+						locclient = new j2DClient(client, userContext, splash);
+						perceptionDispatch.register(locclient.getPerceptionListener());
+						locclient.startGameLoop();
+					} catch (SAXException | IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			});
 		}
