@@ -15,9 +15,9 @@ package games.stendhal.client.actions;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import games.stendhal.client.MockStendhalClient;
@@ -26,6 +26,11 @@ import marauroa.common.game.RPAction;
 
 public class WhoActionTest {
 
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		SlashActionRepository.register();
+	}
+	
 	@After
 	public void tearDown() throws Exception {
 		StendhalClient.resetClient();
@@ -45,8 +50,6 @@ public class WhoActionTest {
 				}
 			}
 		};
-		final WhoAction action = new WhoAction();
-		assertTrue(action.execute(null, null));
 	}
 
 	/**
@@ -54,7 +57,7 @@ public class WhoActionTest {
 	 */
 	@Test
 	public void testGetMaximumParameters() {
-		final WhoAction action = new WhoAction();
+		SlashAction action = SlashActionRepository.get("who");
 		assertThat(action.getMaximumParameters(), is(0));
 	}
 
@@ -63,7 +66,7 @@ public class WhoActionTest {
 	 */
 	@Test
 	public void testGetMinimumParameters() {
-		final WhoAction action = new WhoAction();
+		SlashAction action = SlashActionRepository.get("who");
 		assertThat(action.getMinimumParameters(), is(0));
 	}
 
