@@ -1,18 +1,13 @@
 package games.stendhal.client.actions;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import games.stendhal.client.ClientSingletonRepository;
@@ -22,8 +17,6 @@ import games.stendhal.client.gui.MockUserInterface;
 import games.stendhal.client.gui.UserInterface;
 import games.stendhal.client.scripting.ChatLineParser;
 import games.stendhal.client.util.UserInterfaceTestHelper;
-import games.stendhal.server.core.config.XMLActionLoader;
-import games.stendhal.server.core.config.XMLUtil;
 import marauroa.common.game.RPAction;
 
 /**
@@ -33,18 +26,27 @@ import marauroa.common.game.RPAction;
  */
 public class XMLActionTest {
 	
-	private static XMLAction action = null;
+	private static SlashAction action;
 	
 	@BeforeClass
-	public static void init() throws SAXException, IOException {
+	public static void init() {
 		UserInterfaceTestHelper.resetUserInterface();
-		
+		/*
+		HashMap<String,SlashAction> xml_actions = new HashMap<String,SlashAction>();
 		FileInputStream input_xml;
 		input_xml = new FileInputStream("data/conf/slashActions.xml");
-        final Document doc = XMLUtil.parse(input_xml);
+		xml_actions = XMLActionLoader.load(input_xml);
+		actions.putAll(xml_actions);*/
 		
-		Element actionData = (Element) doc.getElementsByTagName("WhoAction").item(1);
-		action = XMLActionLoader.readActionData(actionData);
+		new MockStendhalClient() {
+			@Override
+			public void send(final RPAction action) {
+				assertEquals("tellall", action.get("type"));
+				assertEquals("Hello", action.get("text"));
+
+			}
+		};
+		action = SlashActionRepository.get("tellall");
 	}
 
 	@After
@@ -75,17 +77,14 @@ public class XMLActionTest {
 		new MockStendhalClient() {
 			@Override
 			public void send(final RPAction action) {
-				assertEquals("who", action.get("type"));
-				assertNull(action.get("target"));
+				assertEquals("tellall", action.get("type"));
+				assertEquals("Hello", action.get("text"));
+
 			}
 		};
-/*      NEEDS CHANGING SO IT WORKS WITH XML ACTION WHO
-		final SummonAtAction action = new SummonAtAction();
-		assertTrue(action.execute(new String[]{"player", "bag", "5"}, "money"));
-		assertNull(getInterface().getLastEventLine());*/
 		
-		assertTrue(action.execute(null, null));
-		assertNull(getInterface().getLastEventLine());
+		assertTrue(action.execute(null, "Hello"));
+
 	}
 
 	/**
@@ -117,11 +116,12 @@ public class XMLActionTest {
 		new MockStendhalClient() {
 			@Override
 			public void send(final RPAction action) {
-				assertEquals("who", action.get("type"));
-				assertNull(action.get("target"));
+				assertEquals("tellall", action.get("type"));
+				assertEquals("", action.get("text"));
+
 			}
 		};
 		SlashActionRepository.register();
-		ChatLineParser.parseAndHandle("/who");
+		ChatLineParser.parseAndHandle("/tellall");
 	}
 }
