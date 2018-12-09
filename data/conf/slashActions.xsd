@@ -11,31 +11,12 @@
 	</complexType>
 	
 	<complexType name="SlashAction">
-		<sequence>
-			<element name="attributes" type="Q1:Attributes" />
-		</sequence>
 		<attribute name = "name" type="string" use="required"/>
 		<attribute name = "min" type="integer" use="required"/>
 		<attribute name = "max" type="integer" use="required"/>
+		<element name="attributes" type="string" />
 		
 	</complexType>
-	
-    
-    <complexType name="Attributes">
-    	<sequence>
-    		<element name="type" type="Q1:attribute-string" />
-    		<element name="target" type="Q1:attribute-string" />
-    		<element name="text" type="Q1:attribute-string" />
-    	</sequence>
-    </complexType>
-	
-    <complexType name="attribute-string">
-    	<attribute name="value" type="string" />
-    </complexType>
-	
-	<complexType name="attribute-integer">
-    	<attribute name="value" type="integer" />
-    </complexType>
 	
 	
 </schema>

@@ -57,14 +57,18 @@ public final class XMLActionLoader {
 	    XMLAction xml_action = new XMLAction();
 	    Map<String, String> actionData = new HashMap<>();
 	    NodeList allactions = element.getChildNodes();
+	    //System.out.println("allactionLength: " +allactions.getLength());
 		for (int i = 0; i < allactions.getLength(); i++)
 		{
 		    Node node = allactions.item(i);
 		    if(node.getNodeType() == Node.ELEMENT_NODE)
 		    {
+		    		//System.out.println("Come Now");
 	            	Element actionElement = (Element)node;
 	            	final String name = actionElement.getAttribute("name");
+	            	//System.out.println("NAME" + name);
 	            	final String value = actionElement.getAttribute("value");
+	            	//System.out.println("VALUE" + value);
 	            	actionData.put(name, value);
 		    }// if		
 	    }// for

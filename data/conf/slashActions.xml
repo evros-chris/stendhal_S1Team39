@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <slashActions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="stendhal slashActions.xsd ">
-	
+		
 	<slashAction name="AddBuddyAction" min="1" max="1">
-		<attributes>
-			<type value="addbuddy" />
-			<target value= "params0" />
+			<Element name = "type" value="addbuddy" />
+			<Element name= "target" value= "params0" />
 			<text value = "" />
-		</attributes>
 	</slashAction>
 	
 	<slashAction name="AnswerAction" min="1" max="0">
-		<attributes>
-			<type value="answer" />
-			<target value = "" />
-			<text value="remainder" />
-		</attributes>
+			<Element name = "type" value="answer" />
+			<Element name = "target" value = "" />
+			<Element name = "text" value="remainder" />
 	</slashAction>
 	
 
@@ -23,43 +19,33 @@
 	
 	<!--  Core SlashAction is down there -->
 	<slashAction name="MessageAction" min="1" max="1">
-		<attributes>
-			<type value="tell" />
-			<target value= "params0" />
-			<text value = "remainder" />
-		</attributes>
+			<Element name = "type" value="tell" />
+			<Element name = "target" value= "params0" />
+			<Element name = "text" value = "remainder" />
 	</slashAction>
 	
 	<slashAction name="SupportAnswerAction" min="1" max="1">
-		<attributes>
-			<type value="supportanswer" />
-			<target value= "params0" />
-			<text value = "remainder" />
-		</attributes>
+			<Element name = "type" value="supportanswer" />
+			<Element name = "target" value= "params0" />
+			<Element name = "text" value = "remainder" />
 	</slashAction>
 	
 	<slashAction name="WhoAction" min = "0" max="0">
-		<attributes>
-			<type value="who" />
-			<target value="" />
-			<text value = ""/>
-		</attributes>
+			<Element name = "type" value="who" />
+			<Element name = "target" value="" />
+			<Element name = "text" value = ""/>
 	</slashAction>
 	
 	<slashAction name="HelpAction" min="0" max="0">
-		<attributes>
-			<type value = "vho" />
-			<target value = "" />
-			<text value = "" />
-		</attributes>
+			<Element name = "type" value = "vho" />
+			<Element name = "target" value = "" />
+			<Element name = "text" value = "" />
 	</slashAction>
 
 	<slashAction name="GroupMessageAction" min="0" max="0">
-		<attributes>
-			<type value="who" />
-			<target value = "" />
-			<text value= "remainder" />
-		</attributes>
+			<Element name = "type" value="who" />
+			<Element name ="target" value = "" />
+			<Element name = "text" value= "remainder" />
 	</slashAction>	
 
 </slashActions>
