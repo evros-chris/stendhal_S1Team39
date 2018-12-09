@@ -31,12 +31,6 @@ public class XMLActionTest {
 	@BeforeClass
 	public static void init() {
 		UserInterfaceTestHelper.resetUserInterface();
-		/*
-		HashMap<String,SlashAction> xml_actions = new HashMap<String,SlashAction>();
-		FileInputStream input_xml;
-		input_xml = new FileInputStream("data/conf/slashActions.xml");
-		xml_actions = XMLActionLoader.load(input_xml);
-		actions.putAll(xml_actions);*/
 		
 		new MockStendhalClient() {
 			@Override
@@ -92,7 +86,6 @@ public class XMLActionTest {
 	 */
 	@Test
 	public void testGetMaximumParameters() {
-		//final SummonAtAction action = new SummonAtAction();
 		assertEquals(0, action.getMaximumParameters());
 	}
 
@@ -101,7 +94,6 @@ public class XMLActionTest {
 	 */
 	@Test
 	public void testGetMinimumParameters() {
-		//final SummonAtAction action = new SummonAtAction();
 		assertEquals(0, action.getMinimumParameters());
 	}
 
