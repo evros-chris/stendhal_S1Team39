@@ -164,5 +164,11 @@
 			<Element name = "type" value="who" />
 			<Element name = "text" value= "remainder" />
 	</slashAction>	
+	
+	<slashAction name="echo" min="0" max="0">
+			<Element name = "type" value="who" />
+			<Element name = "target" value= "params0" />
+			<Element name = "text" value= "remainder" />
+	</slashAction>	
 
 </slashActions>

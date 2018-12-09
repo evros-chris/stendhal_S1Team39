@@ -12,7 +12,7 @@
  ***************************************************************************/
 package games.stendhal.server.actions;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -47,6 +47,7 @@ import games.stendhal.server.actions.query.LanguageAction;
 import games.stendhal.server.actions.query.ListProducersAction;
 import games.stendhal.server.actions.query.LookAction;
 import games.stendhal.server.actions.query.ProgressStatusQueryAction;
+import games.stendhal.server.actions.EchoAction; 
 import games.stendhal.server.actions.query.QuestListAction;
 import games.stendhal.server.actions.query.WhereAction;
 import games.stendhal.server.actions.query.WhoAction;
@@ -124,6 +125,7 @@ public class CommandCenter {
 		ReorderAction.register();
 		SentenceAction.register();
 		StoreMessageAction.register();
+		EchoAction.register();
 		StopAction.register();
 		TradeAction.register();
 		UseAction.register();
