@@ -74,4 +74,10 @@ public class XMLAction implements SlashAction
 	{
 		return min;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return actionMap.get("type").substring(0, 1).toUpperCase() + actionMap.get("type").substring(1) + "Action";
+	}
 }
