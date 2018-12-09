@@ -29,6 +29,7 @@ public class AnswerActionTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		SlashActionRepository.register();
 	}
 
 	@After
@@ -49,7 +50,7 @@ public class AnswerActionTest {
 
 			}
 		};
-		final AnswerAction action = new AnswerAction();
+		SlashAction action = SlashActionRepository.get("answer");
 		assertTrue(action.execute(null, "schnick"));
 	}
 
@@ -58,7 +59,7 @@ public class AnswerActionTest {
 	 */
 	@Test
 	public void testGetMaximumParameters() {
-		final AnswerAction action = new AnswerAction();
+		SlashAction action = SlashActionRepository.get("answer");
 		assertThat(action.getMaximumParameters(), is(0));
 	}
 
@@ -67,7 +68,7 @@ public class AnswerActionTest {
 	 */
 	@Test
 	public void testGetMinimumParameters() {
-		final AnswerAction action = new AnswerAction();
+		SlashAction action = SlashActionRepository.get("answer");
 		assertThat(action.getMinimumParameters(), is(1));
 	}
 
