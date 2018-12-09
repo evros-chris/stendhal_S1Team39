@@ -43,6 +43,7 @@ public final class XMLActionLoader {
 			{
 				Element element = (Element)node;
 				final String actionName = element.getAttribute("name");
+				//System.out.println("For Each Action: ");
 				SlashAction Action = readActionData(element);
 				actions.put(actionName,Action);
 
@@ -66,9 +67,9 @@ public final class XMLActionLoader {
 		    		//System.out.println("Come Now");
 	            	Element actionElement = (Element)node;
 	            	final String name = actionElement.getAttribute("name");
-	            	//System.out.println("NAME" + name);
+	            	//System.out.println("NAME " + name);
 	            	final String value = actionElement.getAttribute("value");
-	            	//System.out.println("VALUE" + value);
+	            	//System.out.println("VALUE " + value);
 	            	actionData.put(name, value);
 		    }// if		
 	    }// for

@@ -14,7 +14,7 @@
 		<attribute name = "name" type="string" use="required"/>
 		<attribute name = "min" type="integer" use="required"/>
 		<attribute name = "max" type="integer" use="required"/>
-		<element name="attributes" type="string" />
+		<element name="Element" type="string" />
 		
 	</complexType>
 	

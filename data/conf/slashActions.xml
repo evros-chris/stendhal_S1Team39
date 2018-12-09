@@ -9,6 +9,12 @@
 	</slashAction>
 	
 	
+	<slashAction name="AdminNoteAction" min="1" max="1">
+			<Element name = "type" value="adminnote" />
+			<Element name= "target" value= "params0" />
+			<Element name= "note" value= "remainder" />
+	</slashAction>
+	
 		
 	<slashAction name="AddBuddyAction" min="1" max="1">
 			<Element name = "type" value="addbuddy" />
@@ -20,6 +26,34 @@
 			<Element name = "text" value="remainder" />
 	</slashAction>
 	
+	
+	<slashAction name="AlterAction" min="3" max="3">
+			<Element name = "type" value="alter" />
+			<Element name = "target" value="params0" />
+			<Element name = "stat" value="params1" />
+			<Element name = "mode" value="params2" />
+			<Element name = "value" value= "remainder" />
+	</slashAction>
+	
+	<slashAction name="AlterCreatureAction" min="2" max="2">
+			<Element name = "type" value="altercreature" />
+			<Element name = "target" value="params0" />
+			<Element name = "text" value= "params1" />
+	</slashAction>
+	
+	<slashAction name="AnswerAction" min="1" max="0">
+			<Element name = "type" value="answer" />
+			<Element name = "text" value= "remainder" />
+	</slashAction>
+
+	<slashAction name="BanAction" min="2" max="2">
+			<Element name ="type" value = "ban" />
+			<Element name ="target" value ="params0" />
+			<Element name="hours" value="params1" />
+			<Element name="reason" value="remainder" />
+	</slashAction>
+
+
 
 	<!--  remainder / target need to be modify -->
 	
