@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <slashActions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="stendhal slashActions.xsd ">
+	
+	<slashAction name="AcceptChallengeAction" min="1" max="1">
+			<Element name = "type" value="challenge" />
+			<Element name = "action" value = "accept" />
+			<Element name= "target" value= "params0" />
+	</slashAction>
+	
+	
 		
 	<slashAction name="AddBuddyAction" min="1" max="1">
 			<Element name = "type" value="addbuddy" />
 			<Element name= "target" value= "params0" />
-			<text value = "" />
 	</slashAction>
 	
 	<slashAction name="AnswerAction" min="1" max="0">
 			<Element name = "type" value="answer" />
-			<Element name = "target" value = "" />
 			<Element name = "text" value="remainder" />
 	</slashAction>
 	
@@ -32,19 +38,14 @@
 	
 	<slashAction name="WhoAction" min = "0" max="0">
 			<Element name = "type" value="who" />
-			<Element name = "target" value="" />
-			<Element name = "text" value = ""/>
 	</slashAction>
 	
 	<slashAction name="HelpAction" min="0" max="0">
 			<Element name = "type" value = "vho" />
-			<Element name = "target" value = "" />
-			<Element name = "text" value = "" />
 	</slashAction>
 
 	<slashAction name="GroupMessageAction" min="0" max="0">
 			<Element name = "type" value="who" />
-			<Element name ="target" value = "" />
 			<Element name = "text" value= "remainder" />
 	</slashAction>	
 
