@@ -131,7 +131,7 @@
 	
 	<slashAction name="TellAllAction" min="0" max="0">
 			<Element name ="type" value="tellall"/>
-			<Element name = "text" value="remainder"/>
+ 			<Element name = "text" value="remainder"/>
 	</slashAction>
 	
 	
@@ -150,10 +150,6 @@
 	
 	<slashAction name="WhoAction" min = "0" max="0">
 			<Element name = "type" value="who" />
-	</slashAction>
-	
-	<slashAction name="HelpAction" min="0" max="0">
-			<Element name = "type" value = "vho" />
 	</slashAction>
 
 	<slashAction name="GroupMessageAction" min="0" max="0">

@@ -82,11 +82,11 @@ public class SlashActionRepository {
 
 		actions.put("ignore", new IgnoreAction());
 		actions.put("inspect", new InspectAction());
-		actions.put("invisible", new InvisibleAction());
+		//actions.put("invisible", new InvisibleAction());
 
 		actions.put("jail", new JailAction());
 
-		actions.put("listproducers", new ListProducersAction());
+		//actions.put("listproducers", new ListProducersAction());
 
 		actions.put("me", new EmoteAction());
 		actions.put("msg", msg);
@@ -126,7 +126,7 @@ public class SlashActionRepository {
 		actions.put("tell", msg);
 
 		actions.put("where", new WhereAction());
-		actions.put("who", who);
+		//actions.put("who", who);
 		actions.putAll(BareBonesBrowserLaunchCommandsFactory.createBrowserCommands());
 //		actions.put("wrap", new WrapAction());
 

@@ -43,10 +43,10 @@ public class XMLAction implements SlashAction
 		  {
 			  String dataValue = actionMap.get(datakey);
 			  
-			  if(dataValue.length() > 6 && dataValue.substring(0,6).equals("params"))
+			  if(dataValue.substring(0,6).equals("params"))
 			  {
-				  int p_num = Integer.parseInt(dataValue.substring(7));
-				  dataValue = params[p_num];
+				  int para_num = Integer.parseInt(dataValue.substring(6));
+				  dataValue = params[para_num];
 			  }
 			  else if (dataValue.equals("remainder"))
 			  {
@@ -60,7 +60,7 @@ public class XMLAction implements SlashAction
 	      ClientSingletonRepository.getClientFramework().send(serverAction);
 
 		}
-		return true;
+	    return true;
 	}
 	
 	
