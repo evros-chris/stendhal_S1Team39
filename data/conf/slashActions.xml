@@ -53,9 +53,87 @@
 			<Element name="reason" value="remainder" />
 	</slashAction>
 
+	<slashAction name="CreateChallengeAction" min="1" max="1">
+			<Element name ="type" value = "challenge" />
+			<Element name ="target" value ="params0" />
+			<Element name="action" value="open" />
+	</slashAction>
 
+	<slashAction name="EmoteAction" min="0" max="0">
+			<Element name ="type" value = "emote" />
+			<Element name ="text" value ="remainder" />
+	</slashAction>
 
-	<!--  remainder / target need to be modify -->
+	<slashAction name="GagAction" min="2" max="2">
+			<Element name ="type" value="gag"/>
+			<Element name ="target" value="params0"/>
+			<Element name ="minutes" value="params1"/>
+			<Element name ="reason" value="remainder"/>			
+	</slashAction>
+
+	<slashAction name="InspectAction" min="1" max="1">
+			<Element name ="type" value="inspect"/>
+			<Element name ="text" value="params0"/>		
+	</slashAction>
+	
+	<slashAction name="InvisibleAction" min="0" max="0">
+			<Element name ="type" value="invisible"/>
+	</slashAction>
+
+	<slashAction name="JailAction" min="2" max="2">
+			<Element name ="type" value="jail"/>
+			<Element name ="target" value="params0"/>
+			<Element name ="minutes" value="params1"/>		
+			<Element name ="reason" value="remainder"/>		
+	</slashAction>
+	
+    <slashAction name="ListProducerAction" min="0" max="0">
+			<Element name ="type" value="listproducers"/>
+	</slashAction>
+	
+	<slashAction name="RemoveBuddyAction" min="1" max="1">
+			<Element name ="type" value="removebuddy"/>
+			<Element name = "target" value="params0"/>
+	</slashAction>
+	
+	<slashAction name="SentenceAction" min="0" max="0">
+			<Element name ="type" value="sentence"/>
+			<Element name = "value" value="remainder"/>
+	</slashAction>
+	
+	
+	<slashAction name="StoreMessageAction" min="1" max="1">
+			<Element name ="type" value="storemessage"/>
+			<Element name = "target" value="params0"/>
+			<Element name ="text" value="remainder" />
+	</slashAction>
+	
+	<slashAction name="SupportAction" min="0" max="0">
+			<Element name ="type" value="support"/>
+			<Element name = "text" value="remainder"/>
+	</slashAction>
+	
+	
+	<slashAction name="TeleportAction" min="4" max="4">
+			<Element name ="type" value="teleport"/>
+			<Element name = "target" value="params0"/>
+			<Element name = "zone" value="params1"/>
+			<Element name = "x" value="params2"/>
+			<Element name = "y" value="params3"/>			
+			<Element name = "text" value="remainder"/>
+	</slashAction>
+	
+	<slashAction name="SupportAnswerAction" min="1" max="1">
+			<Element name ="type" value="supportanswer"/>
+			<Element name = "target" value="params0"/>
+			<Element name = "text" value="remainder"/>
+	</slashAction>
+	
+	<slashAction name="TellAllAction" min="0" max="0">
+			<Element name ="type" value="tellall"/>
+			<Element name = "text" value="remainder"/>
+	</slashAction>
+	
 	
 	<!--  Core SlashAction is down there -->
 	<slashAction name="MessageAction" min="1" max="1">
