@@ -37,7 +37,7 @@ public class SlashActionRepository {
 	 */
 	public static void register() throws SAXException, IOException {
 		final SlashAction msg = new MessageAction();
-		final SlashAction supporta = new SupportAnswerAction();
+		//final SlashAction supporta = new SupportAnswerAction();
 		final SlashAction who = new WhoAction();
 		final SlashAction help = new HelpAction();
 		final GroupMessageAction groupMessage = new GroupMessageAction();
@@ -50,17 +50,17 @@ public class SlashActionRepository {
 		actions.putAll(xml_actions);
 
 		actions.put("/", new RemessageAction());
-		actions.put("add", new AddBuddyAction());
+		//actions.put("add", new AddBuddyAction());
 		actions.put("adminlevel", new AdminLevelAction());
-		actions.put("adminnote", new AdminNoteAction());
-		actions.put("alter", new AlterAction());
-		actions.put("altercreature", new AlterCreatureAction());
+		//actions.put("adminnote", new AdminNoteAction());
+		//actions.put("alter", new AlterAction());
+		//actions.put("altercreature", new AlterCreatureAction());
 		actions.put("alterquest", new AlterQuestAction());
-		actions.put("answer", new AnswerAction());
+		//actions.put("answer", new AnswerAction());
 		actions.put("atlas", new AtlasBrowserLaunchCommand());
 		actions.put("away", new AwayAction());
 
-		actions.put("ban", new BanAction());
+		//actions.put("ban", new BanAction());
 
 		actions.put("clear", new ClearChatLogAction());
 		actions.put("clickmode", new ClickModeAction());
@@ -72,24 +72,24 @@ public class SlashActionRepository {
 
 		actions.put("cast", new CastSpellAction());
 
-		actions.put("gag", new GagAction());
+		//actions.put("gag", new GagAction());
 		actions.put("gmhelp", new GMHelpAction());
 		actions.put("group", new GroupManagementAction(groupMessage));
-		actions.put("groupmessage", groupMessage);
+		//actions.put("groupmessage", groupMessage);
 		actions.put("grumpy", new GrumpyAction());
 
 		actions.put("help", help);
 
 		actions.put("ignore", new IgnoreAction());
-		actions.put("inspect", new InspectAction());
+		//actions.put("inspect", new InspectAction());
 		//actions.put("invisible", new InvisibleAction());
 
-		actions.put("jail", new JailAction());
+		//actions.put("jail", new JailAction());
 
 		//actions.put("listproducers", new ListProducersAction());
 
 		actions.put("me", new EmoteAction());
-		actions.put("msg", msg);
+		//actions.put("msg", msg);
 		actions.put("mute", new MuteAction());
 
 		actions.put("names", who);
@@ -100,9 +100,9 @@ public class SlashActionRepository {
 
 		actions.put("quit", new QuitAction());
 
-		actions.put("remove", new RemoveBuddyAction());
+		//actions.put("remove", new RemoveBuddyAction());
 
-		actions.put("sentence", new SentenceAction());
+		//actions.put("sentence", new SentenceAction());
 		actions.put("status", new SentenceAction()); // Alias for /sentence
 		actions.put("settings", new SettingsAction());
 
@@ -110,19 +110,19 @@ public class SlashActionRepository {
 		actions.put("volume", new VolumeAction());
 		actions.put("vol", new VolumeAction());
 
-		actions.put("storemessage", new StoreMessageAction());
-		actions.put("postmessage", new StoreMessageAction());
+		//actions.put("storemessage", new StoreMessageAction());
+		//actions.put("postmessage", new StoreMessageAction());
 
 		actions.put("summonat", new SummonAtAction());
 		actions.put("summon", new SummonAction());
-		actions.put("supportanswer", supporta);
-		actions.put("supporta", supporta);
-		actions.put("support", new SupportAction());
+		//actions.put("supportanswer", supporta);
+		//actions.put("supporta", supporta);
+		//actions.put("support", new SupportAction());
 
 		actions.put("takescreenshot", new ScreenshotAction());
-		actions.put("teleport", new TeleportAction());
+		//actions.put("teleport", new TeleportAction());
 		actions.put("teleportto", new TeleportToAction());
-		actions.put("tellall", new TellAllAction());
+		//actions.put("tellall", new TellAllAction());
 		actions.put("tell", msg);
 
 		actions.put("where", new WhereAction());
@@ -136,8 +136,8 @@ public class SlashActionRepository {
 		actions.put("movecont", new MoveContinuousAction());
 
 		// PvP challenge actions
-		actions.put("challenge", new CreateChallengeAction());
-		actions.put("accept", new AcceptChallengeAction());
+		//actions.put("challenge", new CreateChallengeAction());
+		//actions.put("accept", new AcceptChallengeAction());
 	}
 
 	/**

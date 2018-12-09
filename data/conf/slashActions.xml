@@ -2,32 +2,32 @@
 <slashActions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="stendhal slashActions.xsd ">
 	
-	<slashAction name="AcceptChallengeAction" min="1" max="1">
+	<slashAction name="accept" min="1" max="1">
 			<Element name = "type" value="challenge" />
 			<Element name = "action" value = "accept" />
 			<Element name= "target" value= "params0" />
 	</slashAction>
 	
 	
-	<slashAction name="AdminNoteAction" min="1" max="1">
+	<slashAction name="adminnote" min="1" max="1">
 			<Element name = "type" value="adminnote" />
 			<Element name= "target" value= "params0" />
 			<Element name= "note" value= "remainder" />
 	</slashAction>
 	
 		
-	<slashAction name="AddBuddyAction" min="1" max="1">
+	<slashAction name="add" min="1" max="1">
 			<Element name = "type" value="addbuddy" />
 			<Element name= "target" value= "params0" />
 	</slashAction>
 	
-	<slashAction name="AnswerAction" min="1" max="0">
+	<slashAction name="answer" min="1" max="0">
 			<Element name = "type" value="answer" />
 			<Element name = "text" value="remainder" />
 	</slashAction>
 	
 	
-	<slashAction name="AlterAction" min="3" max="3">
+	<slashAction name="alter" min="3" max="3">
 			<Element name = "type" value="alter" />
 			<Element name = "target" value="params0" />
 			<Element name = "stat" value="params1" />
@@ -35,86 +35,93 @@
 			<Element name = "value" value= "remainder" />
 	</slashAction>
 	
-	<slashAction name="AlterCreatureAction" min="2" max="2">
+	<slashAction name="altercreature" min="2" max="2">
 			<Element name = "type" value="altercreature" />
 			<Element name = "target" value="params0" />
 			<Element name = "text" value= "params1" />
 	</slashAction>
 	
-	<slashAction name="AnswerAction" min="1" max="0">
+	<slashAction name="answer" min="1" max="0">
 			<Element name = "type" value="answer" />
 			<Element name = "text" value= "remainder" />
 	</slashAction>
 
-	<slashAction name="BanAction" min="2" max="2">
+	<slashAction name="ban" min="2" max="2">
 			<Element name ="type" value = "ban" />
 			<Element name ="target" value ="params0" />
 			<Element name="hours" value="params1" />
 			<Element name="reason" value="remainder" />
 	</slashAction>
 
-	<slashAction name="CreateChallengeAction" min="1" max="1">
+	<slashAction name="challenge" min="1" max="1">
 			<Element name ="type" value = "challenge" />
 			<Element name ="target" value ="params0" />
 			<Element name="action" value="open" />
 	</slashAction>
 
-	<slashAction name="EmoteAction" min="0" max="0">
+	<slashAction name="emote" min="0" max="0">
 			<Element name ="type" value = "emote" />
 			<Element name ="text" value ="remainder" />
 	</slashAction>
 
-	<slashAction name="GagAction" min="2" max="2">
+	<slashAction name="gag" min="2" max="2">
 			<Element name ="type" value="gag"/>
 			<Element name ="target" value="params0"/>
 			<Element name ="minutes" value="params1"/>
 			<Element name ="reason" value="remainder"/>			
 	</slashAction>
 
-	<slashAction name="InspectAction" min="1" max="1">
+	<slashAction name="inspect" min="1" max="1">
 			<Element name ="type" value="inspect"/>
 			<Element name ="text" value="params0"/>		
 	</slashAction>
 	
-	<slashAction name="InvisibleAction" min="0" max="0">
+	<slashAction name="invisible" min="0" max="0">
 			<Element name ="type" value="invisible"/>
 	</slashAction>
 
-	<slashAction name="JailAction" min="2" max="2">
+	<slashAction name="jail" min="2" max="2">
 			<Element name ="type" value="jail"/>
 			<Element name ="target" value="params0"/>
 			<Element name ="minutes" value="params1"/>		
 			<Element name ="reason" value="remainder"/>		
 	</slashAction>
 	
-    <slashAction name="ListProducerAction" min="0" max="0">
+    <slashAction name="listproducers" min="0" max="0">
 			<Element name ="type" value="listproducers"/>
 	</slashAction>
 	
-	<slashAction name="RemoveBuddyAction" min="1" max="1">
+	<slashAction name="remove" min="1" max="1">
 			<Element name ="type" value="removebuddy"/>
 			<Element name = "target" value="params0"/>
 	</slashAction>
 	
-	<slashAction name="SentenceAction" min="0" max="0">
+	<slashAction name="sentence" min="0" max="0">
 			<Element name ="type" value="sentence"/>
 			<Element name = "value" value="remainder"/>
 	</slashAction>
 	
 	
-	<slashAction name="StoreMessageAction" min="1" max="1">
+	<slashAction name="storemessage" min="1" max="1">
 			<Element name ="type" value="storemessage"/>
 			<Element name = "target" value="params0"/>
 			<Element name ="text" value="remainder" />
 	</slashAction>
 	
-	<slashAction name="SupportAction" min="0" max="0">
+	<slashAction name="postmessage" min="1" max="1">
+			<Element name ="type" value="storemessage"/>
+			<Element name = "target" value="params0"/>
+			<Element name ="text" value="remainder" />
+	</slashAction>
+	
+	<!--  SupportAction -->
+	<slashAction name="support" min="0" max="0">
 			<Element name ="type" value="support"/>
 			<Element name = "text" value="remainder"/>
 	</slashAction>
 	
 	
-	<slashAction name="TeleportAction" min="4" max="4">
+	<slashAction name="teleport" min="4" max="4">
 			<Element name ="type" value="teleport"/>
 			<Element name = "target" value="params0"/>
 			<Element name = "zone" value="params1"/>
@@ -123,36 +130,37 @@
 			<Element name = "text" value="remainder"/>
 	</slashAction>
 	
-	<slashAction name="SupportAnswerAction" min="1" max="1">
+	<slashAction name="supportanswer" min="1" max="1">
 			<Element name ="type" value="supportanswer"/>
 			<Element name = "target" value="params0"/>
 			<Element name = "text" value="remainder"/>
 	</slashAction>
 	
-	<slashAction name="TellAllAction" min="0" max="0">
+	<slashAction name="supporta" min="1" max="1">
+			<Element name ="type" value="supportanswer"/>
+			<Element name = "target" value="params0"/>
+			<Element name = "text" value="remainder"/>
+	</slashAction>
+	
+	<slashAction name="tellall" min="0" max="0">
 			<Element name ="type" value="tellall"/>
  			<Element name = "text" value="remainder"/>
 	</slashAction>
 	
 	
 	<!--  Core SlashAction is down there -->
-	<slashAction name="MessageAction" min="1" max="1">
+	<slashAction name="msg" min="1" max="1">
 			<Element name = "type" value="tell" />
 			<Element name = "target" value= "params0" />
 			<Element name = "text" value = "remainder" />
 	</slashAction>
 	
-	<slashAction name="SupportAnswerAction" min="1" max="1">
-			<Element name = "type" value="supportanswer" />
-			<Element name = "target" value= "params0" />
-			<Element name = "text" value = "remainder" />
-	</slashAction>
 	
-	<slashAction name="WhoAction" min = "0" max="0">
+	<slashAction name="who" min = "0" max="0">
 			<Element name = "type" value="who" />
 	</slashAction>
 
-	<slashAction name="GroupMessageAction" min="0" max="0">
+	<slashAction name="groupmessage" min="0" max="0">
 			<Element name = "type" value="who" />
 			<Element name = "text" value= "remainder" />
 	</slashAction>	
