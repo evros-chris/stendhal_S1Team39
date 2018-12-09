@@ -51,7 +51,7 @@ public final class XMLActionLoader {
 		return actions;
 	}
 	
-	private static XMLAction readActionData(final Element element)
+	public static XMLAction readActionData(final Element element)
 	{
 		// Read the data of the action into the action map
 	    XMLAction xml_action = new XMLAction();
