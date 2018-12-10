@@ -31,6 +31,12 @@ public final class Actions {
 	//push
 	public static final String PUSH = "push";
 
+	//Echo
+	public static final String ECHO = "echo";
+	
+	//N_Times
+	public static final String N_TIMES = "n";
+	
 	//knock
 	public static final String KNOCK = "knock";
 

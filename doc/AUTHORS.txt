@@ -210,7 +210,7 @@ Notable contributors:
   . Coder (Invisibility ring)
 - Cheuk Nam Rayan
   . Bug fixer
-  . Coder (Lon Latham NPC, UoM campus)
+  . Coder (Migration of slashAction to XML action)
 - Stevin Sebastian
   . Bug fixer
   . Coder

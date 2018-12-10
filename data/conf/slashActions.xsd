@@ -1,0 +1,22 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="stendhal" xmlns:tns="http://www.example.org"
+	elementFormDefault="qualified" xmlns:Q1="stendhal">
+
+	<element name="slashActions" type="Q1:SlashActions"></element>
+	
+	<complexType name="SlashActions">
+		<sequence>
+			<element name="slashAction" type="Q1:SlashAction" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="SlashAction">
+		<attribute name = "name" type="string" use="required"/>
+		<attribute name = "min" type="integer" use="required"/>
+		<attribute name = "max" type="integer" use="required"/>
+		<element name="Element" type="string" />
+		
+	</complexType>
+	
+	
+</schema>

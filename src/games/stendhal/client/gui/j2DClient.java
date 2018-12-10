@@ -29,6 +29,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -46,6 +47,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.plaf.TabbedPaneUI;
 
 import org.apache.log4j.Logger;
+import org.xml.sax.SAXException;
 
 import games.stendhal.client.ClientSingletonRepository;
 import games.stendhal.client.GameLoop;
@@ -231,10 +233,12 @@ public class j2DClient implements UserInterface {
 	 * @param splash
 	 *        splash screen or <code>null</code>. If not
 	 *        <code>null</code>, it will be used as the main window
+	 * @throws IOException 
+	 * @throws SAXException 
 	 */
 	public j2DClient(final StendhalClient client,
 			final UserContext userContext,
-			JFrame splash) {
+			JFrame splash) throws SAXException, IOException {
 		this.client = client;
 		this.userContext = userContext;
 		setDefault(this);

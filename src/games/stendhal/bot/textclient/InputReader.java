@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import org.apache.log4j.Logger;
+import org.xml.sax.SAXException;
 
 import games.stendhal.client.actions.SlashActionRepository;
 import games.stendhal.client.scripting.ChatLineParser;
@@ -31,7 +32,12 @@ public class InputReader implements Runnable {
 
 	@Override
 	public void run() {
-		SlashActionRepository.register();
+		try {
+			SlashActionRepository.register();
+		} catch (SAXException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			try {

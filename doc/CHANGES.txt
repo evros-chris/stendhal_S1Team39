@@ -1,5 +1,13 @@
 Changelog
 ---------
+1.30
+*code*
+- Migrate the slashActions to XMLActions.
+- Add two new classes XMLActions and XMLActionLoader
+- Add two XML file slashAction.xml and slashAction.xsd
+- Writing test to test the migration has been sucessfully implemented.
+- Added tests for the other slash actions as well.
+
 1.29
 *world*
 - added UoM campus in ages city
