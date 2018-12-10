@@ -19,9 +19,8 @@ import marauroa.common.game.RPAction;
 import static org.hamcrest.core.StringContains.containsString;
 
 public class ClientInfoActionTest {
-
-	private final String response = "\n" + 
-			"Stendhal: 1.30uom\n";	
+    //Should be 1.30 but jenkins uses older version.
+	private final String response = "Stendhal: 1.27.5";	
 
 	@BeforeClass
 	public static void init() {
