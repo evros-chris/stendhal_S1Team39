@@ -21,11 +21,8 @@ import static org.hamcrest.core.StringContains.containsString;
 public class ClientInfoActionTest {
 
 	private final String response = "\n" + 
-			"Stendhal: 1.29uom\n" + 
-			"OS: Mac OS X  10.14.1 x86_64\n" + 
-			"Java-Runtime: Java(TM) SE Runtime Environment 9+181 from /Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home\n" + 
-			"Java-VM: Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 9+181\n";	
-	
+			"Stendhal: 1.30suom\n";	
+
 	@BeforeClass
 	public static void init() {
 		UserInterfaceTestHelper.resetUserInterface();
