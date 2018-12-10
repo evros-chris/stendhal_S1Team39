@@ -6,6 +6,7 @@ Changelog
 - Add two new classes XMLActions and XMLActionLoader
 - Add two XML file slashAction.xml and slashAction.xsd
 - Writing test to test the migration has been sucessfully implemented.
+- Added tests for the other slash actions as well.
 
 1.29
 *world*
