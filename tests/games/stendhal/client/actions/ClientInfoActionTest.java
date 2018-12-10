@@ -21,7 +21,7 @@ import static org.hamcrest.core.StringContains.containsString;
 public class ClientInfoActionTest {
 
 	private final String response = "\n" + 
-			"Stendhal: 1.30suom\n";	
+			"Stendhal: 1.30uom\n";	
 
 	@BeforeClass
 	public static void init() {
